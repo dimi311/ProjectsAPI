@@ -5,6 +5,7 @@ var fs = require("fs");
 app.get('/listProjects', function (req, res) {
    fs.readFile( __dirname + "/" + "projects.json", 'utf8', function (err, data) {
       console.log( data );
+      res.setHeader('Content-Type', 'application/json');
       res.end( data );
    });
 })
